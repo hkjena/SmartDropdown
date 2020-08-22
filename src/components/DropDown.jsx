@@ -29,11 +29,11 @@ const DropDown = ({
   };
   const Filter = term => {
     setShow(false);
-    console.log(term);
+    // console.log(term);
     let filtered = countries.filter(x =>
       x.toLowerCase().includes(term.toLowerCase())
     );
-    console.log(filtered);
+    // console.log(filtered);
     setFilteredCountries(filtered);
   };
 
