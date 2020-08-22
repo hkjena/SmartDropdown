@@ -1,0 +1,81 @@
+body {
+  min-height: 100vh;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+* {
+  box-sizing: border-box;
+}
+#dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #aaa;
+  width: 250px;
+  height: 40px;
+  padding: 0 20px;
+  font-weight: 500;
+}
+input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #aaa;
+  width: 100%;
+  font-size: 17px;
+  height: 40px;
+  padding: 0 20px 0 40px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+i {
+  font-size: 30px;
+  color: rgb(87, 87, 87);
+}
+.search {
+  position: relative;
+}
+.fa-search {
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 10px;
+}
+#dropdown-body {
+  border: 1px solid #aaa;
+  width: 250px;
+  padding: 0 10px;
+  position: relative;
+}
+
+option {
+  padding: 5px 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+option:hover {
+  background-color: teal;
+  color: white;
+}
+.options {
+  max-height: 270px;
+  overflow-y: scroll;
+  margin: 10px 0;
+}
+p {
+  position: absolute;
+  margin: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  background-color: white;
+}
+.not-found {
+  display: flex;
+}
+button {
+  cursor: pointer;
+  margin-left: auto;
+}
