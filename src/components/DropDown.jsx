@@ -28,16 +28,13 @@ const DropDown = ({
     setShow(false);
   };
 
-  useEffect(() => {
+  const handelChange = e => {
+    setShow(false);
+    setTerm(e.target.value);
     let filtered = countries.filter(x =>
       x.toLowerCase().includes(term.toLowerCase())
     );
     setFilteredCountries(filtered);
-  }, [term]);
-
-  const handelChange = e => {
-    setShow(false);
-    setTerm(e.target.value);
   };
 
   return (
