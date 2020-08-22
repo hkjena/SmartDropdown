@@ -27,21 +27,37 @@ const DropDown = ({
     setFilteredCountries(countries);
     setShow(false);
   };
-
-  const handelChange = e => {
+  const Filter = term => {
     setShow(false);
-    setTerm(e.target.value);
+    console.log(term);
     let filtered = countries.filter(x =>
       x.toLowerCase().includes(term.toLowerCase())
     );
+    console.log(filtered);
     setFilteredCountries(filtered);
+  };
+
+  const handelChange = async e => {
+    // console.log(e.target.value);
+    let term = e.target.value;
+    if (!term) {
+      setTerm('');
+      setFilteredCountries(countries);
+      return;
+    }
+    setTerm(e.target.value);
+    Filter(e.target.value);
   };
 
   return (
     <>
       <div
         id='dropdown'
-        onClick={() => setVisibility(!Visibility)}
+        onClick={() => {
+          setTerm('');
+          setFilteredCountries(countries);
+          setVisibility(!Visibility);
+        }}
         style={{ cursor: 'pointer' }}
       >
         {value || 'Select a location'} <i className='fas fa-caret-down'></i>
@@ -66,7 +82,7 @@ const DropDown = ({
               );
             })
           ) : (
-            <div class='not-found'>
+            <div className='not-found'>
               {term.length > 3
                 ? term.slice(0, 3) + `... not found`
                 : term + ` not found`}

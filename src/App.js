@@ -15,7 +15,7 @@ function App() {
       setCountries(result);
     };
     getCountries();
-  }, []);
+  }, [value]);
 
   const addCountry = async term => {
     // Here the method should be 'POST', if the API following Restful Convention.
