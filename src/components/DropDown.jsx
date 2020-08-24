@@ -21,6 +21,7 @@ const DropDown = ({
     setvalue(e.target.value);
     setVisibility(!Visibility);
     setTerm('');
+    setFilteredCountries(countries);
   };
 
   const showMore = () => {
@@ -37,7 +38,7 @@ const DropDown = ({
     setFilteredCountries(filtered);
   };
 
-  const handelChange = async e => {
+  const handelChange = e => {
     // console.log(e.target.value);
     let term = e.target.value;
     if (!term) {
@@ -55,7 +56,7 @@ const DropDown = ({
         id='dropdown'
         onClick={() => {
           setTerm('');
-          setFilteredCountries(countries);
+          setShow(true);
           setVisibility(!Visibility);
         }}
         style={{ cursor: 'pointer' }}
@@ -89,7 +90,7 @@ const DropDown = ({
               {Privilege && (
                 <button
                   onClick={() => {
-                    setVisibility(false);
+                    setVisibility(!Visibility);
                     addAndSelectHandler(term);
                     setTerm('');
                   }}
